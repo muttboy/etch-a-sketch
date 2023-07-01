@@ -1,0 +1,15 @@
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    height: 2em;
+    width: 2em;
+    border: black 2px solid;
+}
+
+.row {
+    display: flex;
+}
