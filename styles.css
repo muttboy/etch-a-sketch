@@ -1,15 +1,36 @@
+* {
+    background-color: honeydew;
+}
+
 #main {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.column {
-    height: 2em;
-    width: 2em;
-    border: black 2px solid;
+#header {
+    display: flex;
+    justify-content: center;
+    color: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.row {
-    display: flex;
+#grid {
+    display: grid;
+    grid-auto-flow: column;
+    background-color: white;
+    border: cadetblue 3px solid;
+    border-radius: 3px;
+    min-width: 0;
+}
+
+.box {
+    background-color: white;
+    height: 2em;
+    width: 2em;
+    border: ghostwhite 1px solid;
+}
+
+.box:hover {
+    background-color: paleturquoise;
 }
