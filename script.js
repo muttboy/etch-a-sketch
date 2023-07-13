@@ -1,8 +1,8 @@
 let choice = 16
 let colorValue = "#808080"
-const colorButton = document.querySelectorAll('button');
-const sizeButton = document.querySelectorAll('input');
-
+let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+let colorButton = document.querySelectorAll('button');
+let clearButton = document.querySelector('input');
 
 
 // Creates a grid
@@ -32,10 +32,19 @@ function paintBox(colorValue) {
     })
 }
 
-// Chooses color to be used for grid
+// Color selector
 colorButton.forEach(color => {
     color.addEventListener('click', function() {
-        paintBox(color.id);
+        paintBox(color.id)
+    })
+})
+
+// Clears grid and resets all cells to white
+clearButton.addEventListener('click', function() {
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach(box => {
+        box.style.backgroundColor = "white";
     })
 })
 
