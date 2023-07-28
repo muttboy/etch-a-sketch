@@ -1,8 +1,8 @@
 let choice = 16
 let colorValue = "#808080"
-let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-let colorButton = document.querySelectorAll('button');
-let clearButton = document.querySelector('input');
+const grid = document.querySelector('#grid');
+const clearButton = document.getElementById('new');
+const slider = document.querySelector('#slider');
 
 
 // Creates a grid
@@ -17,29 +17,22 @@ function makeGrid(choice) {
         }
         document.getElementById('grid').appendChild(column);
     }
-
-    paintBox(colorValue);
 }
+
+makeGrid(choice);
 
 // Changes color of each box in the grid when clicked
 function paintBox(colorValue) {
     const boxes = document.querySelectorAll('.box');
 
     boxes.forEach(box => {
-        box.addEventListener('click', () => {
+        box.addEventListener('mouseover', () => {
             box.style.backgroundColor = colorValue;
         })
     })
 }
 
-// Color selector
-colorButton.forEach(color => {
-    color.addEventListener('click', function() {
-        paintBox(color.id)
-    })
-})
-
-// Clears grid and resets all cells to white
+// Resets grid color to white
 clearButton.addEventListener('click', function() {
     const boxes = document.querySelectorAll('.box');
 
@@ -48,6 +41,19 @@ clearButton.addEventListener('click', function() {
     })
 })
 
-makeGrid(choice);
+//Uses value from slider to make new grid
+slider.addEventListener('mouseup', () => {
+    removeCells();
+    makeGrid(slider.value);
+    paintBox(colorValue);
+})
 
+//Removes existing grid
+function removeCells() {
+    while(grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+}
+
+paintBox(colorValue);
 
