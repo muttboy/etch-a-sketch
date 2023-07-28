@@ -9,18 +9,19 @@
 <body>
     <h1 id="header">Etch-A-Sketch</h1>
     <div id="main">
-        <div id="side">
-            <div class="colors">
-                <button class="colorButton" id="grey">Grey</button>
-                <button class="colorButton" id="cyan">Cyan</button>
-                <button class="colorButton" id="rainbow">Rainbow</button>
+        <div class="gridContainer">
+            <div id="grid"></div>
+            <div class="choiceContainer">
+                <div class="buttonContainer">
+                    <button class="colorButton" id="grey">Grey</button>
+                    <input type="button" value="Clear Grid" id="new">
+                </div>
+                <div class="slideContainer">
+                    <input id="slider" type="range" value="8" min="4" max="16">
+                </div>
             </div>
-            <div class="clear">
-                <input type="button" value="Clear Grid" id="new">
-            </div>
-            <div></div>
         </div>
-        <div id="grid"></div>
+        
     </div>
     
     <script src="/script.js"></script>
