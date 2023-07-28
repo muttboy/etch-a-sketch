@@ -21,7 +21,6 @@
     background-color: white;
     border: cadetblue 3px solid;
     border-radius: 3px;
-    min-width: 0;
 }
 
 .box {
@@ -31,6 +30,14 @@
     border: ghostwhite 1px solid;
 }
 
-.box:hover {
-    background-color: paleturquoise;
+.gridContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choiceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
